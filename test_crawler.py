@@ -91,11 +91,11 @@ def num_d_rtweets_s(s, d, tweets):
 
 
 tweets, no_of_tweets, no_of_rtweets = get_tweets('yashsoni_27  ', api)
-print(num_d_rtweets_s('yashsoni_27 ', 'sirajraval', tweets))
+# print(num_d_rtweets_s('yashsoni_27 ', 'sirajraval', tweets))
 # print(tweets[17]._json)
 
-# r = tweets[0]._json
-# r = json.dumps(r)
-# print(r)
+r = tweets[0]._json
+r = json.dumps(r)
+print(r)
 # loaded_r = json.loads(r)
 
