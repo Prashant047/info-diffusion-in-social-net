@@ -1,6 +1,7 @@
 import tweepy
 import time
 import json
+import csv
 
 consumer_key = '32kPBCxkpRdjftbA2aNIPz41b'
 consumer_secret = 'YmfYen0Brw8FvUQMHZwNAfFXfopgTECti7nsq42KDXmIKzCxvg'
@@ -20,6 +21,9 @@ api = tweepy.API(auth)
 
 def get_tweets(username, api):
     # MAX 3240 tweets - Restricted by Twitter
+    csv_file = open('./user_tweets/{}.csv'.format(username), 'a')
+    csv_writer = csv.writer(csv_file)
+
     start_time = time.time()
     retweet_count = 0
     all_tweets=[]  
@@ -35,7 +39,7 @@ def get_tweets(username, api):
             start_tag = text[:3]
             if start_tag == 'RT ':
                 retweet_count = retweet_count + 1
-            
+            csv_writer.writerow([text])
             all_tweets.append(t)  
 
     end_time = time.time()
@@ -90,12 +94,12 @@ def num_d_rtweets_s(s, d, tweets):
     return num_rtweets
 
 
-tweets, no_of_tweets, no_of_rtweets = get_tweets('yashsoni_27  ', api)
+tweets, no_of_tweets, no_of_rtweets = get_tweets('sirajraval', api)
 # print(num_d_rtweets_s('yashsoni_27 ', 'sirajraval', tweets))
 # print(tweets[17]._json)
 
-r = tweets[0]._json
-r = json.dumps(r)
-print(r)
+# r = tweets[0]._json
+# r = json.dumps(r)
+# print(r)
 # loaded_r = json.loads(r)
 

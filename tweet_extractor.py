@@ -16,14 +16,14 @@ api = tweepy.API(auth)
 
 
 def collect_tweets(hastag):
-    csv_file = open('{}.csv'.format(hastag), 'a')
+    csv_file = open('./collected_tweets/{}.csv'.format(hastag), 'a')
     csv_writer = csv.writer(csv_file)
 
+    num_collected = 0
     for tweet in tweepy.Cursor(api.search,q="#{}".format(hastag),count=200,lang="en").items():
-        print(tweet.created_at, tweet.text)
-
-        
-
+        # print(tweet.created_at, tweet.text)
         csv_writer.writerow([tweet.created_at, tweet.text.encode('utf-8')])
+        num_collected = num_collected + 1
+        print(num_collected)
 
-collect_tweets("MeToo")
+collect_tweets("politics")
