@@ -7,7 +7,7 @@ import re
 
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 
-def make_corpus(name):
+def make_corpus_from_user_tweets(name):
     open('./corpora_dicts/{}.dict'.format(name), 'a').close()
     open('./corpus/{}.mm'.format(name), 'a').close()
 
@@ -92,4 +92,4 @@ def make_corpus(name):
     corpora.MmCorpus.serialize('./corpus/{}.mm'.format(name), corpus)
     print('corpus saved in ./corpus/{}.mm'.format(name))
 
-make_corpus('sirajraval')
+make_corpus_from_user_tweets('sirajraval')
