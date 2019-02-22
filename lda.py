@@ -19,7 +19,7 @@ def lda(name):
     else:
         print("Error!!!!")
 
-    lda = models.LdaMulticore(corpus, id2word=dictionary, num_topics=2, passes=2, workers = 2)
+    lda = models.LdaMulticore(corpus, id2word=dictionary, num_topics=15, passes=2, workers = 2)
 
     """
         To save the model

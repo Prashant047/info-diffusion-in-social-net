@@ -34,8 +34,6 @@ def make_corpus_from_user_tweets(name):
 
             documents.append(text)
 
-    # print(documents[:10])
-
     stop_word_list = [
         "i", "me", "my", "myself", "we", "our", "ours", "ourselves", "you", 
         "your", "yours", "yourself", "yourselves", "he", "him", "his", "himself", "she", "her", 

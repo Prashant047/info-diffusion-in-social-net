@@ -21,6 +21,6 @@ with open('MeToo.csv') as input_file:
         for tag in tags:
             text = text.replace(tag, '')
         text = text.replace('RT : ', '')
-        text = text.replace("\\n", '')
+        text = text.replace("\n", '')
 
         print(text)

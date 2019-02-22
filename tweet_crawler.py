@@ -95,6 +95,8 @@ def num_d_rtweets_s(s, d, tweets):
 
 
 tweets, no_of_tweets, no_of_rtweets = get_tweets('sirajraval', api)
+
+
 # print(num_d_rtweets_s('yashsoni_27 ', 'sirajraval', tweets))
 # print(tweets[17]._json)
 

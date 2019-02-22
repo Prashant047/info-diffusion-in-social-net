@@ -1,6 +1,7 @@
 import tweepy
 import csv
 import pandas as pd
+import sys
 
 ####input your credentials here
 consumer_key = '32kPBCxkpRdjftbA2aNIPz41b'
@@ -26,4 +27,5 @@ def collect_tweets(hastag):
         num_collected = num_collected + 1
         print(num_collected)
 
-collect_tweets("politics")
+hastag = sys.argv[1]
+collect_tweets("{}".format(hastag))
